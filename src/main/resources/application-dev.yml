@@ -1,0 +1,39 @@
+server:
+  port: 8081
+
+#开发配置
+spring:
+  #数据源配置
+  datasource:
+    url: jdbc:mysql://47.101.186.5:3306/db?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: li980314
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  #redis缓存配置
+  redis:
+    # 使用的数据库，默认为0
+    #database: 1
+    # host主机，默认为localhost
+    host: 47.101.186.5
+    # 端口号,默认为6379
+    port: 6379
+    # 密码，默认为空
+    password:
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.example.second.demosecond.entity
+  mapperLocations: classpath:mapper/*.xml
+
+
+
+  #控制台打印sql
+logging:
+  config:
+  level:
+    com:
+      lql:
+        chat:
+          dao: debug
